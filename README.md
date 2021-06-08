@@ -3,8 +3,9 @@
 ## What
 
 This repo is a wrapper with [go-cache](https://github.com/patrickmn/go-cache). We use `gocache.GetOrSet` to set or get
-cache thread safely. It means that when multiple threads/go-routing call `gocache.GetOrSet`, the cache will be set only once.
-Usually it means we just call database to retrieve data ONLY one time.
+cache thread safely. It means that when multiple threads/go-routing call `gocache.GetOrSet`, the cache will be set only
+once. Usually it means we just call database to retrieve data ONLY one time. This is very useful when the first time
+startup the application or when cache expired. It reduces the pressure on database.
 
 #### Install
 
