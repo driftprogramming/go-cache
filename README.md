@@ -9,7 +9,7 @@ Usually it means we just call database to retrieve data ONLY one time.
 #### Install
 
 ```
-go get -u 
+go get -u github.com/driftprogramming/go-cache
 ```
 
 #### STEP 1: Register all your cache keys
