@@ -8,7 +8,7 @@ import (
 func StartApp() {
 	RegisterAllCacheKeys()
 	books, ok := gocache.GetOrSet(KeyBooks, func(cache *gocache.CacheKey) (interface{}, error) {
-		// you also can call database to retrieve cache here.
+		// you also can call database to retrieve books here.
 		return []Book{
 			{name: "i love coding"},
 			{name: "coding is great"},
