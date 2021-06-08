@@ -18,7 +18,7 @@ go get -u github.com/driftprogramming/go-cache
 ```go
 package example
 
-import gocache "go-cache/core"
+import gocache "github.com/driftprogramming/go-cache/core"
 
 const (
 	KeyOrders  = "KEY_ORDERS"
@@ -37,6 +37,7 @@ func RegisterAllCacheKeys() {
 	registry.Register(&gocache.CacheKey{Key: KeyConfig, Expire: gocache.OneMinute})
 }
 
+
 ```
 
 #### STEP 2: Use `gocache.GetOrSet` to get or set cache thread safely.
@@ -45,8 +46,7 @@ func RegisterAllCacheKeys() {
 package example
 
 import (
-	gocache "go-cache/core"
-
+	gocache "github.com/driftprogramming/go-cache/core"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -71,6 +71,7 @@ func StartApp() {
 		log.Info("No books found in cache also in database maybe")
 	}
 }
+
 ```
 
 example refer to `./example`
