@@ -56,7 +56,8 @@ type Book struct {
 
 func StartApp() {
 	RegisterAllCacheKeys()
-	books, ok := gocache.GetOrSet(KeyBooks, func(cache *gocache.CacheKey) (interface{}, error) {
+	cacheInstance := gocache.GetInstance()
+	books, ok := cacheInstance.GetOrSet(KeyBooks, func(cache *gocache.CacheKey) (interface{}, error) {
 		// you also can call database to retrieve books here.
 		return []Book{
 			{name: "i love coding"},
@@ -71,6 +72,7 @@ func StartApp() {
 		log.Info("No books found in cache also in database maybe")
 	}
 }
+
 
 ```
 
